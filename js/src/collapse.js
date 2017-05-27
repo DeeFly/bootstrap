@@ -222,12 +222,12 @@ const Collapse = (($) => {
         .removeClass(ClassName.SHOW)
 
       if (this._triggerArray.length) {
-        for (const elem of this._triggerArray) {
-          const selector = Util.getSelectorFromElement(elem)
+        for (const trigger of this._triggerArray) {
+          const selector = Util.getSelectorFromElement(trigger)
           if (selector !== null) {
             const $elem = $(selector)
             if (!$elem.hasClass(ClassName.SHOW)) {
-              $elem.addClass(ClassName.COLLAPSED)
+              $(trigger).addClass(ClassName.COLLAPSED)
                    .attr('aria-expanded', false)
             }
           }
